@@ -24,6 +24,18 @@ elementoFormlario.addEventListener('submit', function(event){
     let valor = inputValor.value;
     let data = inputData.value;
 
+    // Fazendo uma condição para que seja alterado o valor do seu saldo adicionar ou retirar
+
+    if(tipoTransacao == "Depósito"){
+        saldo += valor;
+    }else if (tipoTransacao == "Transferência" || tipoTransacao == "Pagamento de Boleto"){
+        saldo -= valor;
+    }else{
+        alert("Tipo de transação inválida ");
+        return;
+    }
+
+    elementoSaldo.textContent = saldo;
     // Aqui entra o objeto que vai representar uma nova transação
 
     const novaTransacao = {
