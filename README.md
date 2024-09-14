@@ -23,7 +23,7 @@ Siga as etapas abaixo para instalar o projeto:
 
 ## Como Usar
 
- - Após a instalação, abre os arquivos e localiza o arquivo ' index.html ' clica com o botão direito do mouse e clica na opção de ' Open with live server ' o projeto vai abrir no browser.
+ - Após a instalação, abre os arquivos e localiza o arquivo ' index.html ' clica com o botão direito do mouse e clica na opção de ' Open with live server ' o projeto vai abrir no browser navegador.
 
 ## Tecnologias
   
