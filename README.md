@@ -19,7 +19,7 @@ Uma aplicação que tem como objetivo movimentação bancárias, entrada e saido
 
 Siga as etapas abaixo para instalar o projeto:
  
- - No Visual Studio Code na opção de " EXTENSÃO " na barra de endereço procura a extensão (LIVE SERVER) e instala ( Install ).
+ - No Visual Studio Code na opção de " EXTENSÃO " na barra de endereço procura a extensão (LIVE SERVER) e instalar ( Install ).
 
 ## Como Usar
 
@@ -27,7 +27,7 @@ Siga as etapas abaixo para instalar o projeto:
 
 ## Tecnologias
   
-*HTML 
-*CSS 
-*JavaScript 
-*TypeScript 
+-HTML 
+-CSS 
+-JavaScript 
+-TypeScript 

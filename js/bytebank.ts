@@ -2,11 +2,15 @@
 
 let saldo = 3000;
 
-const elementoSaldo = document.querySelector('.saldo-valor .valor');
+const elementoSaldo = document.querySelector('.saldo-valor .valor') as HTMLElement; 
 
-elementoSaldo.textContent = saldo ; // fez com que mostrasse na tela o saldo
+if (elementoSaldo !== null){
 
-const elementoFormlario = document.querySelector('.block-nova-transacao form');
+    elementoSaldo.textContent = saldo.toString(); // fez com que mostrasse na tela o saldo
+}
+
+
+const elementoFormlario = document.querySelector('.block-nova-transacao form') as HTMLFormElement;
 elementoFormlario.addEventListener('submit', function(event){
     event.preventDefault();
     if(!elementoFormlario.checkValidity()){
@@ -16,18 +20,19 @@ elementoFormlario.addEventListener('submit', function(event){
 
     // Coletar od cados de cada elementos transação  - valor - data - e poder registar
 
-    const inputTipoTransacao = elementoFormlario.querySelector('#tipoTransacao');
-    const inputValor = elementoFormlario.querySelector('#valor');
-    const inputData = elementoFormlario.querySelector('#data');
+    const inputTipoTransacao = elementoFormlario.querySelector('#tipoTransacao' ) as HTMLSelectElement;
+    const inputValor = elementoFormlario.querySelector('#valor')as HTMLInputElement;
+    const inputData = elementoFormlario.querySelector('#data')as HTMLInputElement;
 
-    let tipoTransacao = inputTipoTransacao.value;
-    let valor = inputValor.value;
-    let data = inputData.value;
+    let tipoTransacao:string = inputTipoTransacao.value;
+    let valor:number = inputValor.valueAsNumber;
+    let data = new Date( inputData.value);
 
     // Fazendo uma condição para que seja alterado o valor do seu saldo adicionar ou retirar
 
     if(tipoTransacao == "Depósito"){
         saldo += valor;
+        
     }else if (tipoTransacao == "Transferência" || tipoTransacao == "Pagamento de Boleto"){
         saldo -= valor;
     }else{
@@ -35,7 +40,7 @@ elementoFormlario.addEventListener('submit', function(event){
         return;
     }
 
-    elementoSaldo.textContent = saldo;
+    elementoSaldo.textContent = saldo.toString();
     // Aqui entra o objeto que vai representar uma nova transação
 
     const novaTransacao = {

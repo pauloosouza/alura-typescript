@@ -6,3 +6,23 @@
 * Sempre que a transação for do tipo DEPÓSITO, o valor da transação deve ser adicionado ao saldo da conta.
 * Sempre que a transação for do tipo TRANSFERÊNCIA ou PAGAMENTO DE BOLETO, o valor da transação deve ser subtraído do saldo da conta.
 * O saldo deve sempre ser atualizado na tela da aplicação a cada transação realizada.
+____________________________________________________________
+
+* ANOTAÇÕES
+
+- Como indicar para o Typescript que o que a gente está usando se trata de um HTML como por exemplo:
+
+const elementoSaldo = document.querySelector('.saldo-valor .valor') as HTMLElement; // ESSAS INDICAÇÕES DE as HTMLElement
+
+if (elementoSaldo !== null){
+
+    elementoSaldo.textContent = saldo.toString(); // fez com que mostrasse na tela o saldo
+}
+
+____________________________________________________________
+
+Quando mudei a extesão do arquivo de .JS para .TS ele passou a não funcionar mais, por que teve a mudança de extensão, porém não é colocando o .ts no arquivo que faz a ligação do arquivo.
+
+Neste procedimento tem que abrir o terminal  
+ - Vai abrir a pasta JS ( cd js)
+ - tsc nome do arquivo com a extensão ( tsc bytebank.ts)
