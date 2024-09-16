@@ -46,7 +46,7 @@ elementoFormlario.addEventListener('submit', function(event){
     const novaTransacao = {
         tipoTransacao: tipoTransacao, 
         valor: valor,
-        data:data
+        data:data,
     }
 
     console.log(novaTransacao);

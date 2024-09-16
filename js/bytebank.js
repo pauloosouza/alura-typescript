@@ -34,7 +34,7 @@ elementoFormlario.addEventListener('submit', function (event) {
     var novaTransacao = {
         tipoTransacao: tipoTransacao,
         valor: valor,
-        data: data
+        data: data,
     };
     console.log(novaTransacao);
     elementoFormlario.reset(); // Limpar o formulário todo uma vez que utilizado 
