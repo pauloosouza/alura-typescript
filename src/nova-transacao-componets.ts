@@ -1,14 +1,3 @@
-// Validação e verificação do formulário com saldo
-
-let saldo = 3000;
-
-const elementoSaldo = document.querySelector('.saldo-valor .valor') as HTMLElement; 
-
-if (elementoSaldo !== null){
-
-    elementoSaldo.textContent = saldo.toString(); // fez com que mostrasse na tela o saldo
-}
-
 
 const elementoFormlario = document.querySelector('.block-nova-transacao form') as HTMLFormElement;
 elementoFormlario.addEventListener('submit', function(event){
@@ -18,6 +7,7 @@ elementoFormlario.addEventListener('submit', function(event){
         return;
     }
 
+    
     // Coletar od cados de cada elementos transação  - valor - data - e poder registar
 
     const inputTipoTransacao = elementoFormlario.querySelector('#tipoTransacao' ) as HTMLSelectElement;
@@ -52,4 +42,3 @@ elementoFormlario.addEventListener('submit', function(event){
     console.log(novaTransacao);
     elementoFormlario.reset(); // Limpar o formulário todo uma vez que utilizado 
 });
-

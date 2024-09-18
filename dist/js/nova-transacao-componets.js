@@ -1,10 +1,4 @@
-// Validação e verificação do formulário com saldo
-var saldo = 3000;
-var elementoSaldo = document.querySelector('.saldo-valor .valor');
-if (elementoSaldo !== null) {
-    elementoSaldo.textContent = saldo.toString(); // fez com que mostrasse na tela o saldo
-}
-var elementoFormlario = document.querySelector('.block-nova-transacao form');
+const elementoFormlario = document.querySelector('.block-nova-transacao form');
 elementoFormlario.addEventListener('submit', function (event) {
     event.preventDefault();
     if (!elementoFormlario.checkValidity()) {
@@ -12,12 +6,12 @@ elementoFormlario.addEventListener('submit', function (event) {
         return;
     }
     // Coletar od cados de cada elementos transação  - valor - data - e poder registar
-    var inputTipoTransacao = elementoFormlario.querySelector('#tipoTransacao');
-    var inputValor = elementoFormlario.querySelector('#valor');
-    var inputData = elementoFormlario.querySelector('#data');
-    var tipoTransacao = inputTipoTransacao.value;
-    var valor = inputValor.valueAsNumber;
-    var data = new Date(inputData.value);
+    const inputTipoTransacao = elementoFormlario.querySelector('#tipoTransacao');
+    const inputValor = elementoFormlario.querySelector('#valor');
+    const inputData = elementoFormlario.querySelector('#data');
+    let tipoTransacao = inputTipoTransacao.value;
+    let valor = inputValor.valueAsNumber;
+    let data = new Date(inputData.value);
     // Fazendo uma condição para que seja alterado o valor do seu saldo adicionar ou retirar
     if (tipoTransacao == "Depósito") {
         saldo += valor;
@@ -31,7 +25,7 @@ elementoFormlario.addEventListener('submit', function (event) {
     }
     elementoSaldo.textContent = saldo.toString();
     // Aqui entra o objeto que vai representar uma nova transação
-    var novaTransacao = {
+    const novaTransacao = {
         tipoTransacao: tipoTransacao,
         valor: valor,
         data: data,
