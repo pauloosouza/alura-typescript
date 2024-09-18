@@ -26,3 +26,55 @@ Quando mudei a extesão do arquivo de .JS para .TS ele passou a não funcionar m
 Neste procedimento tem que abrir o terminal  
  - Vai abrir a pasta JS ( cd js)
  - tsc nome do arquivo com a extensão ( tsc bytebank.ts)
+ ____________________________________________________________
+ 
+ Ao invés de usar sempre o  ts + nome do arquivo para compilar o arquivo em JS , pode ser substituido por " TS -W " isso vai fazer com que ele fica monitorando os arquivos e compilando aonde quer que ele esteja e fazendo a compilação de forma automatica.
+ 
+ ____________________________________________________________
+
+
+ Tipos primitivos:
+
+let valor: number = 3000;
+let nome: string = '';
+let isPago: boolean = false;
+let qualquer: any = ''; // Esse Any ele uma forma de usar ele para alterar o valor da variavel informado que pode
+qualquer = 22;
+
+____________________________________________________________
+
+// tipos personalizado  ( type alias)
+
+type Transacao = {
+    tipoTrsansacao: string;
+    data: Date;
+    valor: number;
+}
+
+const novaTransacao: Transacao = {
+    tipoTrsansacao: "Deposito",
+    data: new Date(),
+    valor: 8 
+}
+
+____________________________________________________________
+Aula 06
+
+// Enum
+enum tipoTransacao {
+    DEPOSITO = "Depósito",
+    TRANFERENCIA = "Transferência",
+    PAGAMENTO_BOLETO = "Pagamento de Boleto"
+}
+
+____________________________________________________________
+
+** Parte do Módulo
+
+Durante esta segunda aula, exploramos os seguintes tópicos:
+
+Conhecemos o arquivo tsconfig.json e sua função em um projeto.
+Aprendemos as vantagens de trabalhar com tipos definidos.
+Exploramos a criação de tipos personalizados usando Type Alias e também a criação de Arrays tipados no TypeScript.
+Aprendemos o conceito e a aplicabilidade das Enums.
+Com isso, estamos prontos para seguir em frente para a próxima aula!
