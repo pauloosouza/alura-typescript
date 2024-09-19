@@ -6,8 +6,45 @@
     margin-bottom: 24px;
 
     .usuario {
-        & span {
+        & p {
             margin-right: 40px;
+            margin-left: 30px
         }
     }
 }
+
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+  }
+#switch button {
+    width: 30px;
+    height: 30px;
+    background: #43a128 no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 50%;
+    animation: slide-back 0.5s;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+  }
+  #switch button:hover {
+    outline: 3px solid #85b97c;
+  }
+  .light #switch button {
+    animation: slide-in 0.5s forwards;
+  }
+  #switch span {
+    display: block;
+    width: 62px;
+    height: 18px;
+    background: transparent;
+    border: 2px solid #43a128;
+    border-radius: 9999px;
+
+  }
