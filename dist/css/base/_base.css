@@ -27,6 +27,11 @@ html, body {
     width: 100vw;
     overflow-x: hidden;
 }
+body.dark-mode {
+    background-color: #121212;
+    
+  }
+
 
 body {
     font-family: var(--fonte-padrao);
@@ -72,4 +77,3 @@ main.flex {
 .coluna-central {
     flex-grow: 1;
 }
-

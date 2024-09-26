@@ -20,5 +20,12 @@
 
     @media (max-width: 950px) {
         width: 100%;
+
+        @media (max-width: 950px) {
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+           width: 97%;
+        }
     }
 }

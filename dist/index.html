@@ -7,28 +7,27 @@
     <title>Bytebank</title>
     <link rel="stylesheet" href="css/app.css" type="text/css" />
 </head>
-<body>
+<body >
     <header class="topo container-padding flex">
         <img src="images/logo-bytebank.svg" alt="Bytebank">
         <div class="usuario flex">
 
                    <!-- Botão mode -->
-        <div id="switch" onclick="toggleMode()">
-            <button> </button>
-            <span ></span>
-          </div>
-
-            <p>Joana da Silva Oliveira</p>
+        <img id="toggleThemeBtn" src="./images/escuro.png" alt="" >
+            
+            <span id="name">Joana da Silva Oliveira</span>
             <img src="images/avatar.svg" alt="Joana da Silva Oliveira" />
         </div>
     </header>
     <main class="container-padding flex">
         <nav class="menu">
+            <button id="hamburguer">☰</button>
             <a href="#" class="active">Início</a>
             <a href="#">Transferências</a>
             <a href="#">Investimentos</a>
             <a href="#">Outros serviços</a>
         </nav>
+       
 
         <div class="coluna-central">            
             <section class="block-saldo">
@@ -117,7 +116,8 @@
             </div>
         </aside>
     </main>
-    <script src="./js/saldo-componets.js"></script>
-    <script src="./js/nova-transacao-componets.js"></script>
+
+    <script type="module" src="./js/main.js"></script>
+
 </body>
 </html>
