@@ -78,3 +78,21 @@ Aprendemos as vantagens de trabalhar com tipos definidos.
 Exploramos a criação de tipos personalizados usando Type Alias e também a criação de Arrays tipados no TypeScript.
 Aprendemos o conceito e a aplicabilidade das Enums.
 Com isso, estamos prontos para seguir em frente para a próxima aula!
+
+____________________________________________________________
+
+06 Repensando a divisão das responsabilidades
+
+* As informações da conta devem ficar no módulo especifico " Conta "
+- Saldo 
+- Data de acesso
+- Registro de transações
+- Históricos de transações reaizadas 
+
+( Quem precisar dessas informações chama o módulo " Conta " )
+
+* Os Componentes
+- Nova transação: Deve apenas coletas as informações do formulário da interface e repassar os dados para módulo conta
+- Saldo: Deve exibir as informações de dados de acesso e de saldo para o usuário na interface, acessando esses dados atráves do módulo conta 
+
+(Só tem a reposnsabilidade de interagir com a parte da interface)

@@ -1,3 +1,5 @@
+import SaldoComponents from "./saldo-componets.js";
+import Conta from "../types/Conta.js";
 const elementoFormlario = document.querySelector('.block-nova-transacao form');
 elementoFormlario.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -12,24 +14,13 @@ elementoFormlario.addEventListener('submit', function (event) {
     let tipoTransacao = inputTipoTransacao.value;
     let valor = inputValor.valueAsNumber;
     let data = new Date(inputData.value);
-    // Fazendo uma condição para que seja alterado o valor do seu saldo adicionar ou retirar
-    if (tipoTransacao == "Depósito") {
-        saldo += valor;
-    }
-    else if (tipoTransacao == "Transferência" || tipoTransacao == "Pagamento de Boleto") {
-        saldo -= valor;
-    }
-    else {
-        alert("Tipo de transação inválida ");
-        return;
-    }
-    elementoSaldo.textContent = saldo.toString();
     // Aqui entra o objeto que vai representar uma nova transação
     const novaTransacao = {
         tipoTransacao: tipoTransacao,
         valor: valor,
         data: data,
     };
-    console.log(novaTransacao);
+    Conta.registrarTransacao(novaTransacao);
+    SaldoComponents.atualizar();
     elementoFormlario.reset(); // Limpar o formulário todo uma vez que utilizado 
 });
