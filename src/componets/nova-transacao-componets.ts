@@ -5,8 +5,12 @@ import Conta from "../types/Conta.js";
 
 const elementoFormlario = document.querySelector('.block-nova-transacao form') as HTMLFormElement;
 elementoFormlario.addEventListener('submit', function(event){
+
+    try
+    {
+
     event.preventDefault();
-    if(!elementoFormlario.checkValidity()){
+    if (!elementoFormlario.checkValidity()){
         alert(' Por favor preencha todos os campos da transação!');
         return;
     }
@@ -17,19 +21,24 @@ elementoFormlario.addEventListener('submit', function(event){
     const inputValor = elementoFormlario.querySelector('#valor')as HTMLInputElement;
     const inputData = elementoFormlario.querySelector('#data')as HTMLInputElement;
 
-    let tipoTransacao:TipoTransacao = inputTipoTransacao.value as TipoTransacao;
-    let valor:number = inputValor.valueAsNumber;
+    let tipoTransacao: TipoTransacao = inputTipoTransacao.value as TipoTransacao;
+    let valor: number = inputValor.valueAsNumber;
     let data: Date = new Date(inputData.value);
 
     // Aqui entra o objeto que vai representar uma nova transação
 
-    const novaTransacao:Transacao =  {
+    const novaTransacao: Transacao =  {
         tipoTransacao: tipoTransacao, 
         valor: valor,
         data:data,
-    }
+    } 
 
     Conta.registrarTransacao(novaTransacao);
     SaldoComponents.atualizar();
     elementoFormlario.reset(); // Limpar o formulário todo uma vez que utilizado 
+} 
+catch(erro){
+    alert(erro.message);
+    console.error(erro);
+}
 });
