@@ -10,7 +10,7 @@ const elementoDataAcesso = document.querySelector(".block-saldo time") as HTMLEl
 if (elementoDataAcesso !== null ){
     elementoDataAcesso.textContent = formatarData(Conta.getDataAcesso(), FormatoData.DIA_SEMANA_DIA_MES_ANO);
 }
-
+ 
 renderizarSaldo();
 function renderizarSaldo():void{ // Retorna nada por isso do void - vazia 
     if (elementoSaldo !== null){
